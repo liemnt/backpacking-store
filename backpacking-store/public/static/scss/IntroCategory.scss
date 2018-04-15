@@ -1,0 +1,12 @@
+@import 'bourbon/bourbon';
+@import 'compass/css3';
+
+.IntroCategory {
+  @include padding(2em 0);
+  @include display-flex();
+  @include flex-direction(row);
+  &-item {
+    @include flex-grow(1);
+    @include padding(0.5em);
+  }
+}

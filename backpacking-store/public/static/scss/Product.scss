@@ -1,0 +1,29 @@
+@import 'bourbon/bourbon';
+@import 'compass/css3';
+
+.Product {
+  @include margin(0 0.5em);
+  background-color: white;
+  @include padding(0.5em);
+  &-price {
+    @include padding(1em 0);
+    font-weight: 600;
+  }
+  &-name {
+    //@include padding(em);
+  }
+  &-add {
+    cursor: pointer;
+    display: inline-block;
+    @include border-radius(3px);
+    text-transform: uppercase;
+    border: solid 1px black;
+    @include margin(1em 0);
+    @include padding(0.5em 1em);
+    &:hover {
+      background-color: #e62739;
+      color: white;
+      border-color: white;
+    }
+  }
+}
