@@ -1,14 +1,23 @@
 import React from 'react';
 import Swiper from 'react-id-swiper';
-export default class BackgroundSlider extends React.Component {
+import {connect} from 'react-redux';
+import {clickMenu} from "../../redux/redux.actions/appUI";
+
+class BackgroundSlider extends React.Component {
     constructor(props) {
         super(props);
         this.state = {};
     }
 
+    onClick = () =>{
+        this.props.clickMenu(null);
+    }
+
     render() {
         return (
+            <div  onClick={this.onClick}>
                 <Swiper
+
                     // slideClass="BackgroundSlider-slide "
                     containerClass="BackgroundSlider">
                     <div>
@@ -25,7 +34,11 @@ export default class BackgroundSlider extends React.Component {
                     {/*<div>Slide 4</div>*/}
                     {/*<div>Slide 5</div>*/}
                 </Swiper>
+            </div>
+
 
         )
     }
 }
+
+export default connect(null,{clickMenu})(BackgroundSlider)
