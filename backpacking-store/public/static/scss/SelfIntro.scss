@@ -8,6 +8,7 @@
   @include align-items(center);
   @include justify-content(space-between);
   &-item{
+    @include justify-content(center);
     @include margin(0 0.2em);
     background-color: white;
     @include padding(2em 1em);
@@ -15,6 +16,9 @@
     @include display-flex();
     @include align-items(center);
 
+  }
+  &-icon{
+    @include flex-shrink(0);
   }
   &-info{
     padding-left: 1em;

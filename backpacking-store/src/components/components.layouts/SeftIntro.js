@@ -1,52 +1,55 @@
 import React from 'react';
+import {getStaticImage} from "../../utils/utils";
 
-export default class SeftIntro extends React.Component{
-    constructor(props){
+export default class SeftIntro extends React.Component {
+    constructor(props) {
         super(props);
-        this.state={};
+        this.state = {};
     }
-    render(){
+
+    render() {
         return (
             <div className="SelfIntro">
                 <div className="SelfIntro-item">
                     <div className="SelfIntro-icon">
-                        <img src="http://placehold.it/500x400" alt=""/>
+                        <img src={getStaticImage("plane.png")} alt=""/>
                     </div>
                     <div className="SelfIntro-info">
                         <div className="SelfIntro-title">
-                            Lorem ipsum
+                            GIAO HÀNG TẬN NƠI
                         </div>
                         <div className="SelfIntro-description">
-                            Lorem ipsum hendrerit finibus justo, a hendrerit massa varius in. Pellentesque sed est sodales, congue sapien
+                            Nhanh chóng, an toàn.
                         </div>
                     </div>
                 </div>
                 <div className="SelfIntro-item">
                     <div className="SelfIntro-icon">
-                        <img src="http://placehold.it/500x400" alt=""/>
+                        <img src={getStaticImage("clock.png")} alt=""/>
                     </div>
                     <div className="SelfIntro-info">
                         <div className="SelfIntro-title">
-                            Lorem ipsum
+                            ĐỔI TRẢ DỄ DÀNG
                         </div>
                         <div className="SelfIntro-description">
-                            Lorem ipsum hendrerit finibus justo, a hendrerit massa varius in. Pellentesque sed est sodales, congue sapien
+                            Trong vòng 3 ngày
                         </div>
                     </div>
                 </div>
                 <div className="SelfIntro-item">
-                    <div className="SelfIntro-icon">
-                        <img src="http://placehold.it/500x400" alt=""/>
-                    </div>
-                    <div className="SelfIntro-info">
-                        <div className="SelfIntro-title">
-                            Lorem ipsum
-                        </div>
-                        <div className="SelfIntro-description">
-                            Lorem ipsum hendrerit finibus justo, a hendrerit massa varius in. Pellentesque sed est sodales, congue sapien
-                        </div>
-                    </div>
+                <div className="SelfIntro-icon">
+                <img src={getStaticImage("phone.png")} alt=""/>
                 </div>
+                <div className="SelfIntro-info">
+                <div className="SelfIntro-title">
+                TƯ VẤN TẬN TÌNH
+                </div>
+                <div className="SelfIntro-description">
+               Khách hàng là thượng đế
+                </div>
+                </div>
+                </div>
+
             </div>
         )
     }

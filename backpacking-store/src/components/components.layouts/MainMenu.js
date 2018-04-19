@@ -1,5 +1,5 @@
 import React from 'react';
-import {MENU} from '../../const/menu';
+import {MAP_CATEGORY} from '../../server/serverConfig';
 import {connect} from 'react-redux';
 import {clickMenu} from '../../redux/redux.actions/appUI';
 import classNames from 'classnames';
@@ -12,11 +12,11 @@ class MainMenu extends React.Component {
     }
 
     renderMenu = () => {
-        return MENU.map(item => {
+        return MAP_CATEGORY.map(item => {
             return (
-                <div onClick={this.onClickMainMenu.bind(this,item.id)} id={item.id} className={classNames("MainMenu-item",{"is-active":this.props.currentCategory==item.id})}>
+                <div onClick={this.onClickMainMenu.bind(this,item.id)} id={"category"+item.id} className={classNames("MainMenu-item",{"is-active":this.props.currentCategory==item.id})}>
                     <div className="MainMenu-icon">
-                        <img src={getStaticImage(item.id+".png")} alt=""/>
+                        <img src={getStaticImage(item.imageName)} alt=""/>
                     </div>
                     <div className="MainMenu-name">
                         {

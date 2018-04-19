@@ -1,4 +1,5 @@
 import React from 'react';
+import {getStaticImage} from "../../utils/utils";
 
 export default class  extends React.Component{
     constructor(props){
@@ -8,15 +9,22 @@ export default class  extends React.Component{
     render(){
         return (
             <div className="IntroCategory">
+                <a href="#" className="IntroCategory-wrap">
                 <div className="IntroCategory-item">
-                    <img src="http://placehold.it/500x300" alt=""/>
+
+                    <img src={getStaticImage("ads1.png")} alt=""/>
                 </div>
+                </a>
+                <a href="#" className="IntroCategory-wrap">
                 <div className="IntroCategory-item">
-                    <img src="http://placehold.it/500x300" alt=""/>
+                    <img src={getStaticImage("ads2.jpg")} alt=""/>
                 </div>
+                </a>
+                <a href="#" className="IntroCategory-wrap">
                 <div className="IntroCategory-item">
-                    <img src="http://placehold.it/500x300" alt=""/>
+                    <img src={getStaticImage("ads3.jpg")} alt=""/>
                 </div>
+                </a>
             </div>
             
         )

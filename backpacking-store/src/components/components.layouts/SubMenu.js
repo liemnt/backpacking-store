@@ -1,5 +1,5 @@
 import React from 'react';
-import {MENU} from "../../const/menu";
+import {MAP_CATEGORY} from "../../server/serverConfig";
 import ToolTip from 'react-portal-tooltip';
 import {connect} from 'react-redux';
 import onClickOutside from "react-onclickoutside";
@@ -33,7 +33,7 @@ class SubMenu extends React.Component{
     renderMenu = () =>{
         const {indexCategory} = this.props;
         if (indexCategory!=-1){
-            return MENU[indexCategory].children.map(item=>{
+            return MAP_CATEGORY[indexCategory].children.map(item=>{
                 return (
                     <div className="SubMenu-item">
                         {
@@ -66,12 +66,12 @@ class ToolTipSubMenu extends React.Component{
         this.props.clickMenu(null);
     }
     getCurrentCategory = () =>{
-        return MENU.findIndex(o=>o.id == this.props.currentCategory);
+        return MAP_CATEGORY.findIndex(o=>o.id == this.props.currentCategory);
     }
     render(){
         const foundIndex = this.getCurrentCategory();
         return (
-            <ToolTip style={style} active={true} position="bottom" parent={`#${this.props.currentCategory}`}>
+            <ToolTip style={style} active={true} position="bottom" parent={`#${"category"+this.props.currentCategory}`}>
                 <SubMenuWithClickOutside outsideClickIgnoreClass={"MainMenu"} closeSubMenu={this.closeSubMenu} indexCategory={foundIndex}/>
             </ToolTip>
         )

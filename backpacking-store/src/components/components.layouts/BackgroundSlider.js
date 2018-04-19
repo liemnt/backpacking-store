@@ -2,6 +2,7 @@ import React from 'react';
 import Swiper from 'react-id-swiper';
 import {connect} from 'react-redux';
 import {clickMenu} from "../../redux/redux.actions/appUI";
+import {getStaticImage} from "../../utils/utils";
 
 class BackgroundSlider extends React.Component {
     constructor(props) {
@@ -17,16 +18,30 @@ class BackgroundSlider extends React.Component {
         return (
             <div  onClick={this.onClick}>
                 <Swiper
+                    autoplay
+                    loop
 
                     // slideClass="BackgroundSlider-slide "
                     containerClass="BackgroundSlider">
                     <div>
 
-                        <img className="BackgroundSlider-img" src="https://www.rei.com/adventures/assets/adventures/images/trip/core/northamerica/gsb_hero" alt=""/>
+                        <img className="BackgroundSlider-img" src={getStaticImage("banner1.jpeg")} alt=""/>
                     </div>
                     <div>
 
-                        <img className="BackgroundSlider-img"  src="https://www.rei.com/adventures/assets/adventures/images/trip/core/northamerica/whb_hero" alt=""/>
+                        <img className="BackgroundSlider-img"  src={getStaticImage("banner2.jpg")} alt=""/>
+                    </div>
+                    <div>
+
+                        <img className="BackgroundSlider-img"  src={getStaticImage("banner3.jpg")} alt=""/>
+                    </div>
+                    <div>
+
+                        <img className="BackgroundSlider-img"  src={getStaticImage("banner4.jpg")} alt=""/>
+                    </div>
+                    <div>
+
+                        <img className="BackgroundSlider-img"  src={getStaticImage("banner5.jpg")} alt=""/>
                     </div>
                     {/*<div>Slide 1</div>*/}
                     {/*<div>Slide 2</div>*/}

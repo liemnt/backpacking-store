@@ -2,7 +2,7 @@
 @import 'compass/css3';
 
 .Home{
-  margin-top:  90vh;
+  margin-top:  100vh;
   position: relative;
   &-coverImg{
 @include transform(translateY(-100%));

@@ -1,11 +1,15 @@
 import React from 'react';
 import {BackgroundSlider, IntroCategory, Label,ListProduct,SelfIntro} from '../../components/components.layouts/index'
 import {getStaticImage} from "../../utils/utils";
+import {connect} from 'react-redux';
+import {getLastestProducts,getSpecialProducts} from "../../redux/redux.actions/homeData";
 
-export default class Home extends React.Component {
+class Home extends React.Component {
     constructor(props) {
         super(props);
         this.state = {};
+        this.props.getLastestProducts(4);
+        this.props.getSpecialProducts(4);
     }
 
     render() {
@@ -17,12 +21,12 @@ export default class Home extends React.Component {
                        <div className=" container">
                            <IntroCategory/>
                            <Label title={"Sản phẩm mới"}/>
-                           <ListProduct/>
+                           <ListProduct data={this.props.lastestProducts}/>
                            <SelfIntro/>
                            <Label title={"Sản phẩm bán chạy"}/>
-                           <ListProduct/>
-                           <Label title={"Sản phẩm đặc biệt"}/>
-                           <ListProduct/>
+                           <ListProduct data={this.props.specialProducts}/>
+                           {/*<Label title={"Sản phẩm đặc biệt"}/>*/}
+                           {/*<ListProduct/>*/}
 
                        </div>
 
@@ -35,3 +39,12 @@ export default class Home extends React.Component {
         )
     }
 }
+
+const mapStateToProps = state =>    {
+    return {
+        lastestProducts:state.homeData.lastestProducts,
+        specialProducts:state.homeData.specialProducts
+    }
+}
+
+export default connect(mapStateToProps,{getLastestProducts,getSpecialProducts})(Home)
